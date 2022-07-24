@@ -11,6 +11,7 @@ const setup_page=()=>{
 
     //render page views
     const url_path=window.location.pathname;
+    console.log(url_path)
     let view_type="home";
     if(url_path==="/index.html"){
         view_type="home";
@@ -36,6 +37,23 @@ const setup_page=()=>{
     
 }
 
+const setYTsource=()=>{
+    const blogsJSON=blogs;
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    const blog_name_rtv = url.searchParams.get("name");
+    let innerHTMLBlog="";
+
+    for(let itr in blogsJSON){
+
+    if(blogsJSON[itr]['blog_name']===blog_name_rtv){
+        document.getElementById("blog-yt-iframe").setAttribute("src",blogsJSON[itr]['blog_yt_video_url']);
+    }
+    
+    
+    }
+   
+}
 
 //renderHomeView landing page
 const renderBlogView = () =>{
@@ -44,7 +62,19 @@ const renderBlogView = () =>{
     let url_string = window.location.href;
     let url = new URL(url_string);
     const blog_name_rtv = url.searchParams.get("name");
+    let innerHTMLBlog="";
 
+    for(let itr in blogsJSON){
+
+    if(blogsJSON[itr]['blog_name']===blog_name_rtv){
+        document.getElementById("blog-content-para").innerText=blogsJSON[itr]['blog_description'];
+        document.getElementById("blog-content-article").setAttribute("href",blogsJSON[itr]['blog_article_link']);
+        document.getElementById("blog-yt-iframe").setAttribute("src",blogsJSON[itr]['blog_yt_video_url']);
+    }
+    
+    
+    }
+   
     document.getElementById("blog-title").innerText=blog_name_rtv;
 
 

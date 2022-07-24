@@ -3,7 +3,7 @@
     "topic_name":"Strings",
     "blog_name":"String hashing",
     "blog_description":"Eiusmod reprehenderit veniam non incididunt. Dolore qui excepteur non non in officia labore. Elit ullamco ex elit et proident. Minim amet amet deserunt non nostrud mollit anim do Lorem minim consectetur dolore deserunt aute. Mollit ut proident magna irure.",
-    "blog_yt_video_url":"https://youtu.be/OsLCY3vz3t8",
+    "blog_yt_video_url":"https://www.youtube.com/embed/AREK4H8k7Ng",
     "blog_article_link":"https://humanparts.medium.com/for-better-or-worse-another-summer-slips-and-slides-away-cf171f723ce3",
     "prerequisite":["Strings"]
 },
@@ -11,7 +11,7 @@
     "topic_name":"Strings",
     "blog_name":"String Substring Shortest",
     "blog_description":"Eiusmod reprehenderit veniam non incididunt. Dolore qui excepteur non non in officia labore. Elit ullamco ex elit et proident. Minim amet amet deserunt non nostrud mollit anim do Lorem minim consectetur dolore deserunt aute. Mollit ut proident magna irure.",
-    "blog_yt_video_url":"https://youtu.be/OsLCY3vz3t8",
+    "blog_yt_video_url":"https://www.youtube.com/embed/AREK4H8k7Ng",
     "blog_article_link":"https://humanparts.medium.com/for-better-or-worse-another-summer-slips-and-slides-away-cf171f723ce3",
     "prerequisite":["Strings","Array"]
 },
@@ -19,7 +19,7 @@
     "topic_name":"Arrays",
     "blog_name":"Max sum K",
     "blog_description":"Eiusmod rollit ut proident magna irure.",
-    "blog_yt_video_url":"https://youtu.be/OsLCY3vz3t8",
+    "blog_yt_video_url":"https://www.youtube.com/embed/AREK4H8k7Ng",
     "blog_article_link":"https://humanparts.medium.com/for-better-or-worse-another-summer-slips-and-slides-away-cf171f723ce3",
     "prerequisite":["Strings","Hashing"]
 }
