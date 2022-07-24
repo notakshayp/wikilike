@@ -1,5 +1,6 @@
 import metadata from "./customization/Data/metadata.json" assert { type: "json" };
 import topics from "./customization/Data/Topics.json" assert {type: "json"};
+import blogs from "./customization/Data/blogs.json" assert {type: "json"};
 
 const setup_page=()=>{
     const metadataJSON=metadata;
@@ -13,7 +14,6 @@ const setup_page=()=>{
     let view_type="home";
     if(url_path==="/index.html"){
         view_type="home";
-        console.log("rendring home ...")
         renderHomeView();
     }
     else if(url_path==="/topic.html"){
@@ -23,12 +23,32 @@ const setup_page=()=>{
         let topic_name = url.searchParams.get("name");
         renderTopicView(topic_name)
     }
+    else if(url_path==="/blog.html"){
+        view_type="blog"
+        let url_string = window.location.href;
+        let url = new URL(url_string);
+        let blog_name = url.searchParams.get("name");
+        renderBlogView(blog_name)
+    }
     
 
 
     
 }
 
+
+//renderHomeView landing page
+const renderBlogView = () =>{
+
+    const blogsJSON=blogs;
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    const blog_name_rtv = url.searchParams.get("name");
+
+    document.getElementById("blog-title").innerText=blog_name_rtv;
+
+
+}
 
 //renderHomeView landing page
 const renderHomeView = () =>{
@@ -42,18 +62,17 @@ for(let itr in topics){
     let tempPreReq=topics[itr]['prerequisite'];
 
     let tempFooter='';
-    console.log(tempPreReq)
     for(let itr2 in tempPreReq){
         tempFooter+=`
-        <a class="button is-rounded is-primary is-light p-3 m-2" href="#">${tempPreReq[itr2]}</a>
+        <a class="button is-rounded is-primary is-light p-3 m-2" href="/topic.html?name=${tempPreReq[itr2]}">${tempPreReq[itr2]}</a>
         `
     }
 
     let tempHTML=`
-    <div class="card columns-3 is-multiline pr-2 pl-2 m-4" >
+    <div class="card columns-3 is-multiline pr-2 pl-2 m-4">
         <header class="card-header column is-12">
             <p class="card-header-title ">
-            ${tempTopicName}
+            ${tempTopicName} <a class="button  button is-danger is-rounded is-small is-responsive is-light p-3 m-2" href="/topic.html?name=${tempTopicName}">Learn More</a>
             </p>
         </header>
         <div class="card-content column is-12">
@@ -62,7 +81,7 @@ for(let itr in topics){
             </div>
         </div>
         <footer class="card-footer buttons are-small column is-12">
-        <a class="button  is-white p-3 m-2" disabled>Pre Req</a>
+        <a class="button  is-white p-3 m-2">Pre Req</a>
           ${tempFooter}
         </footer>
     </div>
@@ -78,7 +97,59 @@ document.getElementById("home-view").innerHTML=homeCardsHTML;
 
 //renderTopicView topic specific page
 const renderTopicView = (topic_name) =>{
-    console.log(topic_name);
+   const blogsJSON=blogs;
+
+   let url_string = window.location.href;
+    let url = new URL(url_string);
+    const topic_name_rtv = url.searchParams.get("name");
+
+    document.getElementById("topic-title").innerText=topic_name_rtv;
+
+    
+let topicsCardsHTML="";
+
+for(let itr in blogsJSON){
+    if(blogsJSON[itr]['topic_name']===topic_name)
+    {
+
+        let tempBlogName=blogsJSON[itr]['blog_name'];
+        let tempTopicDes=blogsJSON[itr]['blog_description'];
+        let tempPreReq=blogsJSON[itr]['prerequisite'];
+        let tempFooter='';
+        for(let itr2 in tempPreReq){
+            tempFooter+=`
+            <a class="button is-rounded is-primary is-light p-3 m-2" href="/topic.html?name=${tempPreReq[itr2]}">${tempPreReq[itr2]}</a>
+            `
+        }
+
+        let tempHTML=`
+        <div class="card columns-3 is-multiline pr-2 pl-2 m-4">
+            <header class="card-header column is-12">
+                <p class="card-header-title ">
+                ${tempBlogName} <a class="button  button is-link is-rounded is-small is-responsive is-light p-3 m-2" href="/blog.html?name=${tempBlogName}">Learn More</a>
+                </p>
+            </header>
+            <div class="card-content column is-12">
+                <div class="content">
+            ${tempTopicDes}
+                </div>
+            </div>
+            <footer class="card-footer buttons are-small column is-12">
+            <a class="button  is-white p-3 m-2">Pre Req</a>
+            ${tempFooter}
+            </footer>
+        </div>
+
+        `
+
+        topicsCardsHTML+=tempHTML;
+    }
+}
+document.getElementById("topic-view").innerHTML=topicsCardsHTML;
+
+
+
+
 }
 
 //to set navbar topics
