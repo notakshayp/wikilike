@@ -94,7 +94,7 @@ for(let itr in topics){
     let tempFooter='';
     for(let itr2 in tempPreReq){
         tempFooter+=`
-        <a class="button is-rounded is-primary is-light p-3 m-2" href="/topic.html?name=${tempPreReq[itr2]}">${tempPreReq[itr2]}</a>
+        <a class="button is-rounded is-primary is-light p-3 m-2" href="./topic.html?name=${tempPreReq[itr2]}">${tempPreReq[itr2]}</a>
         `
     }
 
@@ -102,7 +102,7 @@ for(let itr in topics){
     <div class="card columns-3 is-multiline pr-2 pl-2 m-4">
         <header class="card-header column is-12">
             <p class="card-header-title ">
-            ${tempTopicName} <a class="button  button is-danger is-rounded is-small is-responsive is-light p-3 m-2" href="/topic.html?name=${tempTopicName}">Learn More</a>
+            ${tempTopicName} <a class="button  button is-danger is-rounded is-small is-responsive is-light p-3 m-2" href="./topic.html?name=${tempTopicName}">Learn More</a>
             </p>
         </header>
         <div class="card-content column is-12">
@@ -148,7 +148,7 @@ for(let itr in blogsJSON){
         let tempFooter='';
         for(let itr2 in tempPreReq){
             tempFooter+=`
-            <a class="button is-rounded is-primary is-light p-3 m-2" href="/topic.html?name=${tempPreReq[itr2]}">${tempPreReq[itr2]}</a>
+            <a class="button is-rounded is-primary is-light p-3 m-2" href="./topic.html?name=${tempPreReq[itr2]}">${tempPreReq[itr2]}</a>
             `
         }
 
@@ -156,7 +156,7 @@ for(let itr in blogsJSON){
         <div class="card columns-3 is-multiline pr-2 pl-2 m-4">
             <header class="card-header column is-12">
                 <p class="card-header-title ">
-                ${tempBlogName} <a class="button  button is-link is-rounded is-small is-responsive is-light p-3 m-2" href="/blog.html?name=${tempBlogName}">Learn More</a>
+                ${tempBlogName} <a class="button  button is-link is-rounded is-small is-responsive is-light p-3 m-2" href="./blog.html?name=${tempBlogName}">Learn More</a>
                 </p>
             </header>
             <div class="card-content column is-12">
@@ -187,7 +187,7 @@ const set_navbar_topics=(topics)=>{
     const element = document.getElementById("topics-list-nav-bar");
     for (let itr in topics){
         element.innerHTML+=`
-        <a class="navbar-item" href="/topic.html?name=${topics[itr]['topic_name']}">
+        <a class="navbar-item" href="./topic.html?name=${topics[itr]['topic_name']}">
                ${topics[itr]['topic_name']}
               </a>
         `
