@@ -10,21 +10,23 @@ const setup_page=()=>{
     set_navbar_topics(topics);
 
     //render page views
-    const url_path=window.location.pathname;
+    let url_path=window.location.pathname;
+    console.log(url_path)
+    url_path=url_path.split("/")[1];
     console.log(url_path)
     let view_type="home";
-    if(url_path==="/index.html"){
+    if(url_path==="index.html" || url_path===""){
         view_type="home";
         renderHomeView();
     }
-    else if(url_path==="/topic.html"){
+    else if(url_path==="topic.html"){
         view_type="topic"
         let url_string = window.location.href;
         let url = new URL(url_string);
         let topic_name = url.searchParams.get("name");
         renderTopicView(topic_name)
     }
-    else if(url_path==="/blog.html"){
+    else if(url_path==="blog.html"){
         view_type="blog"
         let url_string = window.location.href;
         let url = new URL(url_string);
