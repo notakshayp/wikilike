@@ -1,0 +1,18 @@
+[
+    {
+        "Topic":"String",
+        "PreReq":["Print","Arrays","Chars"]
+    },
+    {
+        "Topic":"Arrays",
+        "PreReq":["Print","Memory"]
+    },
+    {
+        "Topic":"Hashing",
+        "PreReq":["String","Loops","Functions"]
+    },
+    {
+        "Topic":"Loops",
+        "PreReq":["Print","Arrays","String"]
+    }
+]

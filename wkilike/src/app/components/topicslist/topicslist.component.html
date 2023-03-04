@@ -1,0 +1,5 @@
+<div class="container flex flex-wrap items-center">
+  <div class="container m-4 md:w-1/6 lg:w-5/6" *ngFor="let jsonItem of topicsListArr">
+    <app-topiccard [topic_name]="jsonItem['Topic']" [prereqList]="jsonItem['PreReq']"></app-topiccard>
+  </div>
+</div>
