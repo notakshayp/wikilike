@@ -1,6 +1,6 @@
 [
     {
-        "Topic":"String",
+        "Topic":"Strings",
         "PreReq":["Print","Arrays","Chars"]
     },
     {

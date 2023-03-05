@@ -1,0 +1,21 @@
+<article
+  class="animate-background rounded-xl bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-[length:400%_400%] p-0.5 shadow-xl transition [animation-duration:_3s] hover:shadow-sm"
+>
+  <div class="rounded-[10px] bg-white p-4 !pt-15 sm:p-6">
+    <a [routerLink]="['/blog']" [queryParams]="{ name: topic_name }">
+      <h1 class="mt-0.5 text-5xl text-gray-900">
+        {{ topic_name }}
+      </h1>
+    </a>
+  
+    <div class="mt-4 flex flex-wrap gap-1">
+      <span
+        class="whitespace-nowrap rounded-full bg-purple-100 px-2.5 py-0.5 text-xs text-purple-600"
+        *ngFor="let prereq of prereqList"
+      >
+        {{ prereq }}
+      </span>
+    </div>
+  </div>
+</article>
+

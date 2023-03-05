@@ -1,5 +1,11 @@
-<div>
-
+<div class="container">
     <h1 class="text-7xl">{{topicName}}</h1>
 
-</div>
+
+    <div class="container m-4 mx-4 w-5/6" *ngFor="let jsonItem of blogsList">
+        <app-blogcard *ngIf="jsonItem['topic_name'] == topicName" [topic_name]="jsonItem['blog_name']" [prereqList]="jsonItem['prerequisite']"></app-blogcard>
+    </div>
+
+
+    <h1 *ngIf="blogRowCount==0" class="text-5xl"> 😅 We will be adding content for this soon .. </h1>
+    </div>

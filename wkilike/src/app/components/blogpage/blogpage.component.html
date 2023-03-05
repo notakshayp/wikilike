@@ -1,0 +1,54 @@
+<section>
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-bold sm:text-4xl">
+          {{blogName}}
+        </h2>
+      </div>
+  
+      <div class="container" >
+        <div class="w-full max-w-screen-lg my-7">
+            <div class="aspect-w-16 aspect-h-9" style="height: 50vh; width: 100%;">
+              <iframe [src]="safe_blog_yt_video_url" class="w-full h-full"></iframe>
+            </div>
+          </div>
+  
+        <div class="lg:py-16">
+          <article class="space-y-4 text-gray-600">
+            <p>
+             {{blog_description}}
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <div class="container m-4 flex flex-row">
+<a
+target="_blank"
+class="inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 m-4 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+[href]="blog_article_link"
+>
+<span
+  class="block rounded-full bg-white px-8 py-3 text-sm font-medium hover:bg-transparent"
+>
+  Read Blog
+</span>
+</a>
+
+<a
+
+target="_blank"
+class="inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 m-4 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
+[href]="blog_yt_video_url"
+>
+<span
+  class="block rounded-full bg-white px-8 py-3 text-sm font-medium hover:bg-transparent"
+>
+  Watch on YT
+</span>
+</a>
+</div>
+    </div>
+
+  </section>
+  

@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { TopicslistComponent } from './components/topicslist/topicslist.component';
 import { TopiccardComponent } from './components/topiccard/topiccard.component';
 import { TopicspageComponent } from './components/topicspage/topicspage.component';
+import { BlogcardComponent } from './components/blogcard/blogcard.component';
+import { BlogpageComponent } from './components/blogpage/blogpage.component';
 @NgModule({
   declarations: [
     AppComponent,
     TopicslistComponent,
     TopiccardComponent,
-    TopicspageComponent
+    TopicspageComponent,
+    BlogcardComponent,
+    BlogpageComponent
   ],
   imports: [
     BrowserModule,
